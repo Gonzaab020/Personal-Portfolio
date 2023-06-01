@@ -1,0 +1,135 @@
+<!--
+Instrucciones: Construye una página de homenaje
+
+- Tu página de homenaje debe tener un elemento main con un id correspondiente de main, que contiene los demás elementos.
+- La página debe tener un elemento id de title, el cual contendrá una cadena de caracteres (p. ej. texto), 
+  que describe el tema de la página de homenaje (p. ej. "Dr. Norman Borlaug").
+- La página debe tener tanto un elemento figure o un elemento div con un id de img-div.
+- Dentro del elemento #img-div debe tener un elemento img con su correspondiente id="image".
+- Dentro del elemento #img-div, debes ver un elemento con un id="img-caption" correspondiente que 
+  contiene contenido textual describiendo la imagen mostrada en #img-div.
+- Debe tener su correspondiente elemento id="tribute-info", que contendrá una descripción textual del sujeto de la página tributo.
+- Debes ver un elemento a con su id="tribute-link" correspondiente, que contiene información adicional sobre el tema de la página de homenaje. 
+  CONSEJO: Debes dar al elemento un atributo target y establecerlo como _blank para que tu enlace se abra en una nueva pestaña
+- Tú #image debe usar las propiedades max-width y height para redimensionarse en función de la anchura de su elemento padre, 
+  sin sobrepasar su tamaño original
+- Tu elemento img debe estar centrado con respecto al elemento que lo contiene
+- Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. 
+  Dale tu propio estilo. ¡Feliz día programando!
+
+- Nota: Asegúrate de agregar <link rel="stylesheet" href="styles.css"> en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS.
+
+Pruebas
+
+Aprobado:Debes tener un elemento main con un id de main.
+Aprobado:Tu #img-div, #image, #img-caption, #tribute-info, y #tribute-link deben ser descendientes de #main.
+Aprobado:Debes tener un elemento con un id de title.
+Aprobado:Tu #title no debe estar vacío.
+Aprobado:Debes tener un elemento figure o div con un id de img-div.
+Aprobado:Debes tener un elemento img con un id de image.
+Aprobado:Tu #image debe ser descendiente de #img-div.
+Aprobado:Deberías tener un elemento figcaption o div con un id de img-caption.
+Aprobado:Tu #img-caption debe ser descendiente de #img-div.
+Aprobado:Tu #img-caption no debe estar vacío.
+Aprobado:Debes tener un elemento con un id de tribute-info.
+Aprobado:Tu #tribute-info no debe estar vacío.
+Aprobado:Debes tener un elemento a con un id de tribute-link.
+Aprobado:Tu #tribute-link debe tener un atributo href con un enlace.
+Aprobado:Tu #tribute-link debe tener un atributo target establecido en _blank.
+Aprobado:Tu elemento img debe tener un display de block.
+Aprobado:Tu #image debe tener un max-width de 100%.
+Aprobado:Tu #image debe tener un height de auto.
+Aprobado:Tu #image debe estar centrado con respecto al elemento que lo contiene.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/Retrato_-_Katarina.ico">
+    <title>Katarina, La Daga Siniestra</title>
+</head>
+<body>
+    <main id="main">
+      <div id="header">
+        <h1 id="title">Katarina Du Couteau</h1>
+        <p id="description-name">La Daga Siniestra</p>
+      </div>
+      <figure id="img-div">
+        <img src="images/Katarina_0.jpg" alt="Katarina's Appearance" id="image" name="image">
+        <figcaption id="img-caption">
+          <i>“Nunca cuestiones mi lealtad. Nunca sabrás lo que debo soportar por ella”.</i> ~ Katarina
+        </figcaption>
+      </figure>
+      <div class="info">
+        <h3 id="tribute-info" class="subtitle">Información acerca de Katarina</h3>
+        <ul>
+          <li>Nació en la Región de Noxus.</li>
+          <li>Fue entrenada desde pequeña como una Asesina.</li>
+          <li>Mostró un excelente talento para su oficio.</li>
+          <li>Es Orgullosa y Sádica.</li>
+          <li>Debido a su arrogancia, cometrió un error que le valió su cicatriz en el ojo izquierdo.</li>
+        </ul>
+      </div>
+      <div class="info">
+        <h3 id="tribute-ingame-info" class="subtitle">Información In-Game acerca de Katarina</h3>
+        <ul>
+          <li>Coste en la tienda: <img src="images/Icono_-_Esencia_Azul.webp" alt="3150 Blue Escence"> 3150 <img src="images/Icono_-_Riot_Points.webp" alt="790 Riot Points"> 790 </li>
+          <li>Rol: <img src="images/Icono_de_clase_-_Aniquiladores.webp" alt="Icono de rol"> Asesino
+          <li>Dificultad: <img src="images/dificultad-logo.png" alt="Icono de dificultad" id="fix"> Alta</li>
+          <li>Recurso: <img src="images/Icono_de_recurso_-_Sin_recurso.webp" alt="Icono de recurso"> Ninguno</li>
+          <li>Alcance: <img src="images/Icono_de_alcance_-_Cuerpo_a_cuerpo.webp" alt="Icono de alcance"> Cuerpo a Cuerpo</li>
+          <li>Carril: <img src="images/Icono_de_carril_-_Central.webp" alt="Icono de carril"> Central</li>
+        </ul>
+      </div>
+      <div class="info">
+        <h3 id="abilities" class="subtitle">Habilidades</h3>
+        <ul id="abilities-list">
+          <div class="flex-info">
+            <li>
+              <img src="images/Katarina_-_Pasiva.png" alt="p-ability" class="kata-img">
+              <strong>Pasiva - Voracidad:</strong> Si Katarina inflige daño a un enemigo y este muere poco después, los enfriamientos restantes de sus habilidades se reducirán significativamente. Si Katarina recoge una Daga, la usará para acuchillar a todos los enemigos cercanos e infligir daño mágico.
+           </li>
+          </div>
+
+          <div class="flex-info">
+            <li>
+              <img src="images/Katarina_-_Q.png" alt="q-ability" class="kata-img">
+              <strong>Q - Hoja Rebotante:</strong> Katarina arroja una daga hacia el objetivo que luego rebota hacia otros enemigos cercanos antes de aterrizar en el suelo.
+           </li>
+          </div>
+
+          <div class="flex-info">
+            <li>
+              <img src="images/Katarina_-_W.png" alt="w-ability" class="kata-img">
+              <strong>W - Preparación:</strong> Katarina obtiene una ráfaga de velocidad de movimiento y arroja una daga por el aire directamente sobre ella.
+           </li>
+          </div>
+
+          <div class="flex-info">
+            <li>
+              <img src="images/Katarina_-_E.png" alt="e-ability" class="kata-img">
+              <strong>E - Shunpo:</strong> Katarina se transporta hacia el objetivo y lo daña si es un enemigo. Si no, daña al enemigo más cercano.
+           </li>
+          </div>
+
+          <div class="flex-info">
+            <li>
+              <img src="images/Katarina_-_R.png" alt="r-ability" class="kata-img">
+              <strong>R - Loto Mortal:</strong> Katarina se vuelve una ráfaga filosa que causa daño masivo mientras canaliza hacia los 3 enemigos más cercanos.
+           </li>
+          </div>
+        </ul>
+      </div>
+      <div>
+        <h4 id="tribute-link-description">
+          Si dispones de tiempo, puedes enterarte más acerca de este increíble personaje dando click en su nombre! ⇒ <a href="https://universe.leagueoflegends.com/es_AR/champion/katarina/" target="_blank" id="tribute-link">Katarina</a>
+        </h4>
+      </div>
+    </main>
+</body>
+</html>
