@@ -9,9 +9,9 @@ La sección de proyectos debe tener al menos un enlace a un proyecto CHECKED
 Tu portafolio debe tener una barra de navegación con un id de navbar CHECKED
 La barra de navegación debe tener al menos un enlace donde puedas hacer clic para navegar a diferentes secciones de la página CHECKED
 Tu portafolio debe tener un enlace con un id de profile-link, el cual abra tu GitHub o perfil de freeCodeCamp en una pestaña nueva CHECKED
-Tu portafolio debe tener al menos una consulta de medios 
-La altura de la sección de bienvenida debe ser igual a la altura de viewport 
-La barra de navegación siempre debe estar en la parte superior del viewport 
+Tu portafolio debe tener al menos una consulta de medios CHECKED
+La altura de la sección de bienvenida debe ser igual a la altura de viewport CHECKED
+La barra de navegación siempre debe estar en la parte superior del viewport CHECKED
 
 Completa las instrucciones y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. 
 ¡Feliz día programando!
@@ -29,7 +29,7 @@ Esperando:Tu elemento #navbar debe contener al menos un elemento a cuyo atributo
 Esperando:Tu portafolio debe tener un elemento a con un id de profile-link. 
 Esperando:Tu elemento #profile-link debe tener un atributo target de _blank. 
 Esperando:Tu portafolio debe usar al menos una consulta de medios. 
-Esperando:Tu elemento #navbar siempre debe estar en la parte superior del viewport.
+Esperando:Tu elemento #navbar siempre debe estar en la parte superior del viewport. 
 -->
 
 <!DOCTYPE html>
@@ -39,72 +39,88 @@ Esperando:Tu elemento #navbar siempre debe estar en la parte superior del viewpo
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/logo.svg">
     <title>Gonza's Portfolio</title>
 </head>
 <body>
     <!--START OF NAV SECTION-->
-    <nav id="navbar">
-        <ul>
-            <li class="nav-list"><a href="#welcome-section" class="nav-link">About Me</a></li>
-            <li class="nav-list"><a href="#projects" class="nav-link">Projects</a></li>
-            <li class="nav-list"><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="logo image" id="logo-id" class="logo-img">
+            <h2 class="my-name">GonzaDev</h2>
+        </a>
+        <nav id="navbar">
+            <a href="#welcome-section" class="nav-link">About Me</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
     <!--END OF NAV SECTION-->
 
     <!--START OF WELCOME SECTION-->
     <section id="welcome-section">
-        <h1>Hey! I'm Gonzalo Bertran</h1>
+        <h1 id="w-t">Hey! I'm Gonzalo Bertran</h1>
         <p id="w-p">a Web Developer</p>
     </section>
     <!--END OF WELCOME SECTION-->
 
     <!--START OF PROJECTS SECTION-->
-    <section id="projects" class="project-tile">
-        <h2>Personal Projects</h2>
-        <div>
-            <a href="Proyecto Formulario de Encuesta/encuesta.html" target="_blank"> 
-                <img src="img/thumbnail_Form-Page.png" alt="Form Page Thumbnail"><p>Survey Form</p>
+    <section id="projects">
+        <h2 class="subtitle">Personal Projects</h2>
+        <div class="project-tile">
+            <a href="Proyecto Formulario de Encuesta/encuesta.html" target="_blank" class="project-link"> 
+                <img src="img/thumbnail_Form-Page.png" alt="Form Page Thumbnail" class="thumb"><p>Survey Form</p>
             </a>
-            <a href="Proyecto Pagina de Homenaje/homenaje.html" target="_blank">
-                <img src="img/thumbnail_Tribute-Page.png" alt="Tribute Page Thumbnail"><p>Tribute Page</p>
+            <a href="Proyecto Pagina de Homenaje/homenaje.html" target="_blank" class="project-link">
+                <img src="img/thumbnail_Tribute-Page.png" alt="Tribute Page Thumbnail" class="thumb"><p>Tribute Page</p>
             </a>
         </div>
     </section>
     <!--END OF PROJECTS SECTION-->
 
     <!--START OF CONTACT SECTION-->
-    <section id="contact" class="contact-section">
+    <section id="contact">
         <div>
-            <h2>Work Whit Me...</h2>
-        <p>- Here I Am -</p>
+            <h2 class="subtitle">Work Whit Me...</h2>
+        <p id="here">- Here I Am -</p>
         </div>
         <div>
             <a href="https://github.com/Gonzaab020" target="_blank" id="profile-link">
-                GitHub
+                <img src="img/github.png" alt="github-logo">
             </a>
             <a href="https://www.linkedin.com/in/gonzalo-alcides-bertran-228415275/" target="_blank" id="profile-link">
-                LinkedIn
+                <img src="img/linkedin.png" alt="linkedin-logo">
             </a>
         </div>
         <div>
-            <h2>Or Send me an Email</h2>
+            <h2 class="subtitle">Or Send me an Email</h2>
         </div>
         <div class="form-div">
             <form action="index.html" method="post" id="formulario">
-                <label for="name" class="form-label">
-                    Name: <input type="text" id="name" name="name" placeholder="Enter a Name...">
-                </label>
-                <label for="email" class="form-label">
-                    Email: <input type="email" id="email" name="email" placeholder="email@example.co">
-                </label>
-                <label for="subjet" class="form-label">
-                    Subjet: <input type="text" id="subjet" name="subjet" placeholder="How do you drink your coffee?">
-                </label>
-                <label for="description" class="form-label">
-                    Description: <textarea name="description" id="description" cols="60" rows="7"></textarea>
-                </label>
-                <input type="submit" value="Send">
+                <div>
+                    <label for="name" class="form-label">
+                        Name: <input type="text" id="name" name="name" placeholder="Enter a Name...">
+                    </label>
+                </div>
+                <div>
+                    <label for="email" class="form-label">
+                        Email: <input type="email" id="email" name="email" placeholder="email@example.co">
+                    </label>
+                </div>
+                <div>
+                    <label for="subjet" class="form-label">
+                        Subjet: <input type="text" id="subjet" name="subjet" placeholder="How do you drink your coffee?">
+                    </label>
+                </div>
+                <div>
+                    <p>Description: </p>
+                    <label for="description" class="form-label">
+                        <textarea name="description" id="description" cols="50" rows="6" placeholder="My coffee just..."></textarea>
+                    </label>
+                </div>
+                <div>
+                    <input type="submit" value="Send">
+                </div>
             </form>
         </div>
     </section>
@@ -112,8 +128,8 @@ Esperando:Tu elemento #navbar siempre debe estar en la parte superior del viewpo
 
     <!--START OF FOOTER SECTION-->
     <footer id="footer-section">
-        <p>Created by Gonzalo with effort (ﾟヮﾟ)</p>
-        <p>© All Rights Deserved - 2023</p>
+        <p>Created by Me, Gonza with effort (ﾟヮﾟ)</p>
+        <p>© All Rights Reserved - 2023</p>
     </footer>
     <!--END OF FOOTER SECTION-->
 </body>
