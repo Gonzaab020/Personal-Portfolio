@@ -1,0 +1,576 @@
+<!--
+Historias de Usuario:
+
+- Puedes ver un elemento main con su correspondiente id="main-doc", el cual abarcará el contenido principal de la página (documentación técnica)
+- Dentro del elemento #main-doc, se pueden ver varios elementos section, cada uno con la clase main-section. Debe haber un mínimo de cinco
+- El primer elemento dentro de cada .main-section debería ser un elemento header, el cual contendrá texto que describa el tema de esa sección.
+- Cada elemento section con la clase main-section debería tener también un id que corresponda al texto de cada header contenido dentro de él. Cualquier espacio debe ser reemplazado por guiones bajos ( Ejemplo: La sección que contiene el encabezado "JavaScript and Java" debe tener un id="JavaScript_and_Java")
+- Los elementos .main-section deberán tener al menos diez elementos p en total (no cada uno)
+- Los elementos .main-section deberán tener al menos cinco elementos code en total (no cada uno)
+- Los elementos .main-section deberán tener al menos cinco items li en total (no cada uno)
+- Puedes ver un elemento nav con su correspondiente id="navbar"
+- La barra de navegación deberá contener un elemento header, el cual contendrá texto que describa el tema de la documentación técnica
+- Además, la barra de navegación deberá contener elementos de enlace (a) con la clase nav-link. Debe haber uno para cada elemento con la clase main-section
+- El elemento header dentro de la #navbar debería ir antes que los elementos (a) de la barra de navegación
+- Cada elemento con la clase nav-link debería tener texto que corresponda al texto del header de cada section (Ejemplo: Si tienes una seccion/encabezado "Hello world", tu barra de navegación debería tener un elemento que contenga el texto "Hello world")
+- Al hacer click en un elemento de tu barra de navegación, la página debería dirigirse a la sección correspondiente del elemento #main-doc (Ejemplo: Si haces click en el elemento .nav-link que contiene el texto "Hello world", la página debería dirigirse al elemento section que tenga ese id y contenga el encabezado correspondiente)
+- En dispositivos de tamaño normal (portatiles, computadoras de escritorio), el elemento con id="navbar" debe mostrarse en el lado izquierdo de la pantalla y siempre ser visible para el usuario
+- Tu documentación técnica debe usar al menos una media query
+
+Completa las historias de usuario y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo personal. ¡Feliz día programando!
+
+Nota: Asegúrate de agregar <link rel="stylesheet" href="styles.css"> en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
+
+Pruebas:
+
+Aprobado:Debes tener un elemento main con un id de main-doc.
+Aprobado:Debes tener al menos cinco elementos section con la clase main-section.
+Aprobado:Todos tus elementos .main-section deben ser elementos section.
+Aprobado:Debes tener al menos cinco elementos .main-section que sean descendientes de #main-doc.
+Aprobado:El primer hijo de cada .main-section debe ser un elemento header.
+Aprobado:Ninguno de tus elementos header debe estar vacío.
+Aprobado:Todos tus elementos .main-section deben tener un id.
+Aprobado:Cada .main-section debe tener un id que coincida con el texto de su primer hijo, para tener espacios en el texto de su hijo reemplace los espacios por (_) para los id.
+Aprobado:Debes tener al menos 10 elementos (en total) p dentro de tus elementos .main-section.
+Aprobado:Debes tener al menos cinco elementos code que sean descendientes de los elementos .main-section.
+Aprobado:Debes tener al menos cinco elementos li que sean descendientes de los elementos .main-section.
+Aprobado:Debes tener un elemento nav con un id de navbar.
+Aprobado:Tu #navbar debe tener exactamente un elemento header dentro de él.
+Aprobado:Debes tener al menos un elemento a con la clase nav-link.
+Aprobado:Todos tus elementos .nav-link deben ser elementos de anclaje (a).
+Aprobado:Todos tus elementos .nav-link deben estar en el #navbar.
+Aprobado:Debes tener el mismo número de elementos .nav-link y .main-section.
+Aprobado:El elemento header en el #navbar debe estar antes que cualquier enlace (a) en el #navbar.
+Aprobado:Cada .nav-link debe tener un texto que corresponda con el texto del header de su section relacionado (por ejemplo, si tienes un section/header "Hello world", tu #navbar debe tener un .nav-link que tenga el texto "Hello world").
+Aprobado:Cada .nav-link debe tener un atributo href que enlace a su correspondiente .main-section (por ejemplo, si haces clic en un elemento .nav-link que contenga el texto "Hello world", la pagina navega al elemento section con ese id).
+Aprobado:Tu #navbar siempre debe estar en el borde izquierdo de la ventana.
+Aprobado:Tu proyecto de documentación técnica debe usar al menos una media query.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/book-solid.svg">
+    <title>Documentación de Pseudocódigo</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header id="nav-header">
+            Pseudocódigo
+        </header>
+        <ul id="no-padding">
+            <li class="nav-list"><a href="#Acerca_del_Pseudocódigo" class="nav-link">Acerca del Pseudocódigo</a></li>
+            <li class="nav-list"><a href="#Estructuras_de_Control" class="nav-link">Estructuras de Control</a></li>
+            <li class="nav-list"><a href="#Estructura_del_Pseudocódigo" class="nav-link">Estructura del Pseudocódigo</a></li>
+            <li class="nav-list"><a href="#Formación_del_Pseudocódigo" class="nav-link">Formación del Pseudocódigo</a></li>
+            <li class="nav-list"><a href="#Pseint" class="nav-link">PseInt</a></li>
+            <li class="nav-list"><a href="#Referencia" class="nav-link">Referencia</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Acerca_del_Pseudocódigo">
+            <header>
+                Acerca del Pseudocódigo
+            </header>
+            <p>
+                Es una serie de normas léxicas y gramaticales parecidas a la mayoría d los lenguajes de programación, pero sin llegar a 
+                la rigidez de sintáxis de estos ni a la fluidez del lenguaje coloquial. Esto permite codificar un programa con mayor agilidad
+                que en cualquier lenguaje de programación, con la misma validez semántica, normalmente se utiliza en las fases de análisis o
+                diseño de software, o en el estudio de un algoritmo. Forma parte de las distintas herramientas de la ingeniería de software.
+            </p>
+            <p>
+                El Pseudocódigo describe un algoritmo utilizando una mezcla de frases en lenguaje común, instrucciones de programación y
+                palabras clave que definen las estructuras básicas. Su objetivo es permitir que el programador se centre en los aspectos 
+                lógicos de la solución a un problema.
+            </p>
+            <p>
+                Al no ser el pseudocódigo un lenguaje formal, varían de un programador a otro, es decir, no hay un estructura semántica ni
+                arquitectura estándar. Es una herramienta ágil para el estudio y diseño de aplicaciones que podríamos definir como: lenguaje
+                imperativo, de tercera generación, según el método de programación estructurada.
+            </p>
+            <p>
+                En el pseudocódigo, la definición de datos se da por supuesta, sobre todo las variables sencillas, si se emplea formaciones: 
+                pilas, colas, vectores o registros, se puede definir en la cabecera del algoritmo, y naturalmente cuando empleemos el 
+                pseudocódigo para definir estructuras de datos, esa parte la desarrollaremos adecuadamente.
+            </p>
+            <p>
+                Con el pseudocódigo podemos desarrollar cualquier algoritmo que tenga un único punto de inicio, presente un número finito de 
+                posibles puntos de término y posibilite un número finito de caminos entre el punto de inicio y los posibles puntos de término.
+            </p>
+            <p>
+                Mucho se ha discutido sobre los beneficios y los prejuicios del pseudocódigo al enfrentarlo con el diagrama de flujo. Es obvio 
+                que el pseudocódigo permite representar de forma fácil operaciones repetitivas complejas, asi como es más sencilla la tarea de 
+                pasar de pseudocódigo a un lenguaje de programación formal. Otra de las ventajas que representa es que si se siguen las reglas 
+                de indentación se puede observar claramente los niveles de la estructura del programa. Por último, en los procesos de 
+                aprendizaje de los alumnos de programación, éstos están más cerca del paso siguiente (codificación de un lenguaje determinado), 
+                que los que se inician en el mundo de la programación con diagramas de flujo.
+            </p>
+        </section>
+
+        <section class="main-section" id="Estructuras_de_Control">
+            <header>
+                Estructuras de Control
+            </header>
+            <p>
+                En cuanto a las estructuras de control, siempre hay que tener en cuenta que cada uno de los autores defiende las que le parecen 
+                más convenientes ante la existencia de una norma reguladora que establezca las bases de un pseudocódigo ideal. A pesar de ello, 
+                se puede establecer que las siguientes son las más extendidas y aceptadas por la comunidad informática.
+            </p>
+            <ul>
+                <h3>Secuencial</h3>
+                <li class="li-v1">
+                    <p>
+                        Las instrucciones se siguen en una secuencia fija que normalmente viene dada por el número de renglón. Esto quiere 
+                        decir que las instrucciones se ejecutan de arriba a abajo: 
+                    </p>
+                    <code>
+                        Instrucción 1
+                        Instrucción 2
+                        Instrucción 3
+                        . 
+                        . 
+                        Instrucción 6
+
+                    </code>
+                </li>
+                <h3>Selectiva</h3>
+                <li class="li-v1">
+                    <p>
+                        La instrucción selectiva determina si una determinada instrucción se ejecuta o no, según el cumplimiento de una 
+                        condición <i>P</i>. La condición <i>P</i> es una variable booleana o una función reducible a booleana (lógica, 
+                        Verdadero/Falso). Si esta condición es cierta se ejecuta <i>Instrucciones&#8321;</i>, si no es así, ésta no se ejecuta.
+                    </p>
+                    <code>
+                        <b>si</b> <i>P</i> <b>entonces</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8321;</i>
+                        <b>fin si</b>
+                        
+                    </code>
+                </li>
+                <h3>Selectiva Doble</h3>
+                <li class="li-v1">
+                    <p>
+                        La instrucción selectiva realiza una instrucción de dos posibles, según el cumplimiento de una condición <i>P</i>. 
+                        La condición <i>P</i> es una variable booleana o una función reducible a booleana (lógica, Verdadero/Falso). 
+                        Si esta condición es cierta se ejecuta <i>Instrucciones&#8321;</i>, si no es así, se ejecuta <i>Instrucciones&#8322;</i>.
+                    </p>
+                    <code>
+                        <b>si</b> <i>P</i> <b>entonces</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8321;</i>
+                        <b>si no</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8322;</i>
+                        <b>fin si</b>
+                        
+                    </code>
+                </li>
+                <h3>Selectiva Múltiple</h3>
+                <li class="li-v1">
+                    <p>
+                        Otra de las posiblidades comunes son el uso de una selección múltiple, la cual equivaldría a acoger varias 
+                        funciones de selección. En este caso hay una serie de condiciones que tienen que ser mutuamente excluyentes, 
+                        ya que si una de ellas se cumple las demás tienen que ser falsas necesariamente. Por lo tanto, se puede 
+                        considerar que hay un caso <b>si no</b> que será cierto cuando las demás condiciones sean falsas.
+                        <br>
+                        En esta estructura si <i>Condición&#8321;</i> es cierta, entonces se ejecuta sólo <i>Instrucciones&#8321;</i>. 
+                        En general, si <i>Condición&#8321;</i> es verdadera, entonces sólo se ejecuta <i>Instrucciones&#8321;</i>.
+                    </p>
+                    <code>
+                        <b>si</b> <i>Condición&#8321;</i> <b>entonces</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8321;</i>
+                        <b>si no si</b> <i>Condición&#8322;</i> <b>entonces</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8322;</i>
+                        &nbsp;&nbsp;. 
+                        &nbsp;&nbsp;. 
+                        &nbsp;&nbsp;. 
+                        <b>si no si</b> <i>Condición&#8345;</i> <b>entonces</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8345;-&#8321;</i>
+                        <b>si no</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8345;</i>
+                        <b>fin si</b>
+                        
+                    </code>
+                </li>
+                <h3>Iterativa</h3>
+                <li class="li-v1">
+                    <p>
+                        Este tipo de instrucciones, las denominadas iterativas, consideran la posibilidad de realizar una secuencia 
+                        de instrucciones más de una vez. El bucle se repite mientras la condición <i>P</i> sea cierta, ya que si al 
+                        llegar por primera vez al buble mientras la condición es falsa, el cuerpo del bucle no se ejecuta ni una vez.
+                    </p>
+                    <code>
+                        <b>mientras </b><i>P</i> <b>hacer</b>
+                        &nbsp;&nbsp;<i>Instrucciones&#8321;</i>
+                        <b>fin mientras</b>
+                        
+                    </code>
+                </li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Estructura_del_Pseudocódigo">
+            <header>
+                Estructura del Pseudocódigo
+            </header>
+            <p>
+                A continuación pasamos a analizar lo que se puede entender como un modelo estándar de la estructura 
+                del pseudocódigo, si bien hay que volver a recordar que el pseudocódigo no es un lenguaje estandarizado. 
+                Eso significa que diferentes autores podrían dar otras estructuras de control, o bien podrían usar estas 
+                estructuras, pero con notación diferente. Sin embargo, las funciones matemáticas y lógicas toman el 
+                significado usual que tienen en matemátca y lógica, con las mismas expresiones.
+            </p>
+            <h3>Cabecera</h3>
+            <ul>
+                <li>Programa.</li>
+                <li>Modulo.</li>
+                <li>Tipos de Datos.</li>
+                <li>Constantes.</li>
+                <li>Variables.</li>
+            </ul>
+            <h3>Cuerpo</h3>
+            <ul>
+                <li>Inicio.</li>
+                <li>Instrucciones.</li>
+                <li>Fin.</li>
+            </ul>
+            <p>Para comentar en pseudocódigo se le antepone al comentario dos asteríscos (*).</p>
+        </section>
+
+        <section class="main-section" id="Formación_del_Pseudocódigo">
+            <header>
+                Formación del Pseudocódigo
+            </header>
+            <p>
+                A continuación exponemos una serie de pasos básicos que pueden ilustrar el proceso de confección 
+                de una programación en este lenguaje. Los parámetros que se comentan sirven para desarrollar 
+                cualquier tipo de programación en pseudocódigo. Antes de comenzar, se deben establecer unas reglas 
+                para facilitar el seguimiento y la comprensión del ejemplo, como las siguientes: 
+            </p>
+            <ul>
+                <li>
+                    Fuente a utilizar, como por ejemplo Times New Roman. Se propone que las palabras reservadas 
+                    en pseudocódigo se muestren en <b>negrita</b>.
+                </li>
+                <li>
+                    Los puntos "..." deben indicar la posibilidad de repetir algún elemento del pseudocódigo.
+                </li>
+                <li>
+                    Cuando exista la posibilidad de elegir algún elemento a partir de un conjunto de elementos, 
+                    éstos se listarán separados por el símbolo "|".
+                </li>
+                <li>
+                    Las diferentes opciones o posibilidades de uso del pseudocódigo se listan con viñetas.
+                </li>
+            </ul>
+            <p>
+                En un pseudocódigo que pretenda ser de fácil comprensión se emplean oraciones en lenguaje natural, 
+                donde cada una se refiere a una actividad sin palabras rebuscadas y sin errores gramaticales, 
+                abreviaciones y puntuaciones.
+            </p>
+
+            <h3>Tipos de datos</h3>
+            <p>Los tipos de datos básicos son:</p>
+            <ul>
+                <li><b>string </b>cadena de caracteres</li>
+                <li><b>integer</b> número entero</li>
+                <li><b>real</b> número real</li>
+                <li><b>boolean</b> verdadero o falso</li>
+            </ul>
+            <p>
+                Estos tipos de datos se declaran de acuerdo con las formas siguientes:
+            </p>
+            <code>
+                tipo variable&#8321;
+                tipo variable&#8322;, variable&#8323;, ... , variable&#8345;
+                tipo variable&#8345;&#8321;, variable&#8345;&#8322;, ... , variable&#8345;&#8344; = valor
+
+            </code>
+            <p>
+                Donde: tipo puede ser <b>string, integer, real </b>o <b>boolean</b>.
+            </p>
+
+            <h3>Estructuras de datos</h3>
+            <p>Las estructuras de datos son:</p>
+            <ul>
+                <li>
+                    <b>Arreglos.</b>
+                </li>
+            </ul>
+            <code>
+                tipo <b>array&#8321;</b>[rango&#8321;, ... , rango&#8345;], ... ,
+                <b>array</b>&#8322;[rango&#8321;, ... , rango&#8345;]
+
+            </code>
+            <p>Donde:</p>
+            <ul>
+                <li class="li-v3"><b>rango&#8345;:</b> número de localidades deseadas. La primera localidad se referencia con uno.</li>
+                <li class="li-v3"><b>tipo:</b> es alguno de los tipos de datos básicos o alguna estructura de datos.</li>
+            </ul>
+
+            <ul>
+                <li><b>Registros.</b></li>
+            </ul>
+            <p>Declaración:</p>
+            <code>
+                <b>record</b> nombre_registro
+                tipo variable&#8321;
+                -- 
+                tipo variable&#8345;
+                <b>end</b>
+
+            </code>
+            <p>Creación de un registro:</p>
+            <code>
+                nombre_registro registro
+
+            </code>
+            <p>
+                La referencia a un campo de un registro se efectúa de la forma: registro.nombre_campo. 
+            </p>
+
+            <ul>
+                <li><b>Archivos.</b></li>
+            </ul>
+            <p>Declaración: </p>
+            <code>
+                <b>file </b>nombre_archivo
+
+            </code>
+
+            <ul>
+                <li><b>Clases.</b></li>
+            </ul>
+            <p>Declaración:</p>
+            <code>
+                <b>class </b>nombre_clase
+                variables y funciones miembros
+                <b>end</b>
+
+            </code>
+            <p>Instanciación de un objeto: </p>
+            <code>
+                nombre_clase objeto
+
+            </code>
+            <div class="note">
+                <header>Nota</header>
+                <p>
+                    Es posible efectuar combinaciones de las estructuras de control de secuenciación, condición 
+                    e iteración condicional.
+                </p>
+                <ul>
+                    <li>
+                        e&#8345; puede ser una asignación, alguna estructura de control, combinación de éstas 
+                        últimas o una secuenciación delimitada por las palabras reservadas <b>begin</b> y <b>end</b>.
+                    </li>
+                    <li>
+                        c&#8345; es una condición.
+                    </li>
+                </ul>
+                <p>
+                    Se recomienda que los pseudocódigos posean una indentación o sangría consistente.
+                </p>
+            </div>
+            <p>
+                La referencia a un campo de una clase se efectúa de la siguiente forma: 
+                objeto.nombre_función(lista_parámetros).
+            </p>
+
+            <h3>Operadores</h3>
+            <ul>
+                <li><b>Aritméticos.</b></li>
+            </ul>
+            <code>
+                <b>+ </b>suma
+                <b>- </b>resta
+                <b>* </b>multiplicación
+                <b>/ </b>división
+                <b>mod </b>módulo
+                <b>div </b>división entera
+
+            </code>
+
+            <ul>
+                <li><b>De comparación.</b></li>
+            </ul>
+            <code>
+                <b>=</b> igual que
+                <b><></b> distinto de
+                <b><</b> menor que
+                <b>></b> mayor que
+                <b><=</b> menor o igual que
+                <b>>=</b> mayor o igual que
+
+            </code>
+
+            <ul>
+                <li><b>Lógicos.</b></li>
+            </ul>
+            <code>
+                <b>AND.</b> La expresión será verdadera si <b>y sólo si</b> ambas expresiones son verdaderas.
+                <b>OR.</b> La expresión será verdadera si al menos una expresión es verdadera.
+                <b>XOR.</b> La expresión será verdadera si <b>y sólo si</b> ambas expresiones son diferentes (verdadero y falso, o viceversa).
+                <b>NOT.</b> El valor de la expresión es la negación de la expresión original.
+
+            </code>
+
+            <h3>Operaciones de cadenas</h3>
+            <p>Las funciones para cadenas son las siguientes:</p>
+            <ul>
+                <li><b>length </b>(nombre_de_la_cadena)</li>
+                <p>Regresa un valor entero que "contiene" la longitud de la cadena nombre_de_la_cadena.</p>
+                <li><b>substring </b>(nombre_de_la_cadena, posición_inicial, longitud)</li>
+                <p>Regresa una cadena, en donde la posición inicial es la posición a partir de la cual se 
+                copiará el contenido de nombre_de_la_cadena. Longitud es el número de carácteres que se copiarán.</p>
+                
+            </ul>
+            <p>La forma para copiar el contenido de una cadena hacia otra es: </p>
+            <code>
+                cadena1 = cadena2
+
+            </code>
+            <p>La concatenación de cadenas puede ser: </p>
+            <code>
+                cadena_1 = cadena_2 + cadena_3
+                cadena_1 = cadena_1 + cadena_2
+
+            </code>
+
+            <h3>Comentarios</h3>
+            <code>
+                --comentario
+
+                /* línea&#8321;
+                línea&#8322;
+                ... 
+                línea&#8345;
+                */
+
+            </code>
+
+            <h3>Funciones o procedimientos</h3>
+            <p><b>func </b>nombre_función(lista_parámetros): tipo</p>
+            <code>
+                <b>begin</b>
+                &nbsp;&nbsp;e&#8321;
+                &nbsp;&nbsp;... 
+                &nbsp;&nbsp;e&#8345;
+                &nbsp;&nbsp;<b>return </b>variable | expresión | valor
+                <b>end</b>
+
+            </code>
+            <p>Donde: </p>
+            <ul>
+                <li>lista_parámetros: tipo y <b>return</b> son opcionales. </li>
+                <li>Para llamar a una función o procedimiento se escribe: nombre_función(lista_parámetros).</li>
+                <li>lista_parámetros en la definición de la función es de la forma: tipo variable&#8321;, 
+                    tipo variable&#8322;, ... , tipo variable&#8345;.
+                </li>
+                <li>lista_parámetros en el llamado a la función es de la forma: variable&#8321;, 
+                    variable&#8322;, ... , variable&#8345;.</li>
+            </ul>
+
+            <h3>Operaciones de entrada / salida</h3>
+            <ul>
+                <li><b>read </b>(variable&#8321;, variable&#8322;, ... , variable&#8345;)</li>
+                <p>Lee una(s) variable(s) del teclado.</p>
+                <li><b>write </b>("texto&#8321;", ... , "texto&#8345;", variable&#8321;, variable&#8345;)</li>
+                <p>Despliega texto(s) o el valor de una(s) variable(s) en el monitor.</p>
+                <li><b>open </b>(archivo, <b>read | write | append | read/write</b>)</li>
+                <p>Abre un archivo en algún modo (escritura, lectura, adición o lectura/escritura, respectivamente).</p>
+                <li><b>close </b>(archivo)</li>
+                <p>Cierra un archivo previamente abierto.</p>
+                <li><b>readfile </b>(archivo, nombreRegistro)</li>
+                <p>Lee un registro de archivo dejando la información leída en nombreRegistro.</p>
+                <li><b>writefile </b>(archivo, nombreRegistro)</li>
+                <p>Escribe o sobreescribe el contenido de nombreRegistro en el registro actual del archivo.</p>
+                <li><b>EOF </b>(archivo)</li>
+                <p>Regresa verdadero si es el fin del archivo y falso en caso contrario.</p>
+                <li><b>ERROR </b>(archivo)</li>
+                <p>Regresa verdadero si se presentó un error en la última instrucción ejecutada en un archivo, 
+                    y falso en caso contrario.
+                </p>
+                <li><b>seek </b>(archivo, inicio | final | registro&#8345;)</li>
+                <p>Se posiciona al inicio, al final o en un registro X del archivo.</p>
+                <li><b>position </b>(archivo)</li>
+                <p>Regresa el número de registro actual en archivo.</p>
+            </ul>
+
+            <div class="note">
+                <header>Ejemplo</header>
+                <code>
+                    * Programa que calcula el área de un cuadrado a partir de un lado a lado por teclado.
+
+                    Programa: area_cuadrado
+                    Módulo: main **(también se puede llamar principal)
+                    Variables:
+                    &nbsp;&nbsp;lado: natural
+                    &nbsp;&nbsp;area: natural
+                    Inicio 
+                    &nbsp;&nbsp;Visualizar: "Introduce el área del cuadrado"
+                    &nbsp;&nbsp;Leer: lado 
+                    &nbsp;&nbsp;area = lado * lado 
+                    &nbsp;&nbsp;Visualizar: "El área del cuadrado es: ", area 
+                    Fin
+
+                    *Programa que visualice la tabla de multiplicar del número introducido por teclado.
+
+                    Programa: Tabla multiplicar 
+                    Módulo: main 
+                    Variables: 
+                    &nbsp;&nbsp;t: entero 
+                    &nbsp;&nbsp;num: entero
+                    Inicio 
+                    &nbsp;&nbsp;Visualizar: "Introduce un número"
+                    &nbsp;&nbsp;Leer: num 
+                    &nbsp;&nbsp;Desde t = 1 hasta t = 10 repetir 
+                    &nbsp;&nbsp;&nbsp;&nbsp;Visualizar: num, " multiplicado por ", t, " = ", num*t 
+                    &nbsp;&nbsp;Fin desde
+                    Fin
+
+                </code>
+            </div>
+            <p>
+                Una vez que tenemos preparado un diagrama de flujos (ordinograma u organigrama) y un pseudocódigo 
+                ya podemos comenzar con la codificación del programa en nuestro ordenador. A partir de aquí 
+                todo varía dependiendo del lenguaje de programación que utilicemos, pero en todos los programas 
+                tendremos que definir los tipos de datos que utilizaremos.
+            </p>
+        </section>
+
+        <section class="main-section" id="Pseint">
+            <header>
+                PseInt
+            </header>
+            <p>
+                PSeInt es una herramienta para asistir a un estudiante en sus primeros pasos en programación. 
+                Mediante un simple e intuitivo pseudolenguaje en español (complementado con un editor de 
+                diagramas de flujo), le permite centrar su atención en los conceptos fundamentales de la algoritmia 
+                computacional, minimizando las dificultades propias de un lenguaje y proporcionando un entorno 
+                de trabajo con numerosas ayudas y recursos didácticos.
+            </p>
+            <p>
+                Puedes descargar PseInt desde su página oficial.
+            </p>
+        </section>
+
+        <section class="main-section" id="Referencia">
+            <header>
+                Referencia
+            </header>
+            <p>
+                La documentación de esta página fue extraida desde internet y un libro con temática de Computación, del 
+                año 200 A.C. (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+            </p>
+        </section>
+
+        <footer>
+            © Todos los Derechos Reservados a sus respectivos Contribuyentes | Que se haga la paz.  (●´ω｀●)
+        </footer>
+    </main>
+</body>
+</html>
