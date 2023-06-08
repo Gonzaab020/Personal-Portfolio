@@ -1,0 +1,131 @@
+<!--
+Historias de usuario:
+
+- Tu página de inicio de producto debe tener un elemento header con un correspondiente id="header" CHECKED
+- Puedes ver una imagen dentro del elemento header con un correspondiente id="header-img" (Un logotipo sería una buena imagen aquí) CHECKED
+- Dentro el elemento #header, puedes ver un elemento nav con su correspondiente id="nav-bar" CHECKED
+- Puedes ver al menos tres elementos cliqueables dentro del elemento nav, cada una con la clase nav-link CHECKED
+- Cuando hagas click en un botón .nav-link en el elemento nav, serás redireccionado a la sección correspondiente de la página de inicio CHECKED
+- Puedes ver un vídeo del producto incrustado con id="video" CHECKED
+- Tu página de inicio tiene un elemento form con un correspondiente id="form" CHECKED
+- Dentro del formulario, hay un campo input con id="email", donde puedes ingresar tu dirección de email CHECKED
+- El campo de entrada #email debe tener un marcador de texto para que los usuarios sepan para que sirve este campo CHECKED
+- El campo de entrada #email usa validación HTML5 para confirmar que el texto ingresado es una dirección de email CHECKED
+- Dentro del formulario, hay un input de tipo submit (enviar) con su correspondiente id="submit" CHECKED
+- Cuando haces click en el elemento #submit, el email es enviado a una página web (Utiliza esta URL de pruebas: https://www.freecodecamp.com/email-submit) CHECKED
+- La barra de navegación siempre debe estar en la parte superior de la vista CHECKED
+- La página de inicio de tu producto debe tener al menos una consulta de medios CHECKED
+- Tu página de inicio del producto debe utillizar el flexbox CSS al menos una vez CHECKED
+
+Completa las instrucciones y pasa todas las pruebas a continuación para completar este proyecto. Dale tu propio estilo estilo personal. ¡Feliz día programando!
+
+Nota: Asegúrate de agregar <link rel="stylesheet" href="styles.css"> en tu HTML para enlazar tu hoja de estilos y aplicar tu CSS
+
+Pruebas: 
+
+Aprobado:Debes tener un elemento header con un id de header.
+Aprobado:Debes tener un elemento img con un id de header-img.
+Aprobado:Tu #header-img debe ser descendiente de #header.
+Aprobado:Tu #header-img debe tener un atributo src.
+Aprobado:El valor del src de #header-img debe ser una URL válida (inicia con http).
+Aprobado:Debes tener un elemento nav con un id de nav-bar.
+Aprobado:Tu #nav-bar debe ser descendiente de #header.
+Aprobado:Debes tener al menos 3 elementos .nav-link dentro del #nav-bar.
+Aprobado:Cada elemento .nav-link debe tener un atributo href.
+Aprobado:Cada elemento .nav-link debe estar enlazado a su elemento correspondiente en la página de aterrizaje (el valor que tiene el href es el id de otro elemento, por ejemplo, #footer).
+Aprobado:Debes tener un elemento video o iframe con un id de video.
+Aprobado:Tu #video debe tener un atributo src.
+Aprobado:Debes tener un elemento form con un id de form.
+Aprobado:Debes tener un elemento input con un id de email.
+Aprobado:Tu #email debe ser descendiente de #form.
+Aprobado:Tu #email debe tener el atributo placeholder con un texto marcador de posición.
+Aprobado:Tu #email debe usar la validación HTML5 estableciendo su type a email.
+Aprobado:Debes tener un elemento input con un id de submit.
+Aprobado:Tu #submit debe ser descendiente de #form.
+Aprobado:Tu #submit debe tener un type de submit.
+Aprobado:Tu #form debe tener un atributo action de https://www.freecodecamp.com/email-submit.
+Aprobado:Tu #email debe tener un atributo name de email.
+Aprobado:Tu #nav-bar siempre debe estar en la parte superior de la ventana gráfica.
+Aprobado:Tu página de aterrizaje de un producto debe usar por lo menos una consulta de medios.
+Aprobado:Tu página de aterrizaje de un producto debe usar CSS Flexbox por lo menos una vez.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Burger's Market HAHA</title>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <img src="img/burger-solid.png" alt="Burguer" id="header-img" height="50">
+        </div>
+        <nav id="nav-bar">
+            <ul id="nav-ul">
+                <li class="nav-a"><a href="#features" class="nav-link">Features</a></li>
+                <li class="nav-a"><a href="#how-it-works" class="nav-link">How it Works</a></li>
+                <li class="nav-a"><a href="#pricing" class="nav-link">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="features">
+        <h1>The best burgers in the World</h1>
+        <form action="https://www.freecodecamp.com/email-submit" method="post" id="form" target="_blank">
+            <input type="email" id="email" name="email" placeholder="Enter an Email...">
+            <input type="submit" name="button" id="submit" value="Start Now!">
+        </form>
+    </section>
+    <section id="how-it-works">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/77HtmoWtYk0" id="video" title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+    <section id="pricing">
+        <div class="product">
+            <div class="burger-type">
+                <h2>Black Burger</h2>
+            </div>
+            <div>
+                <img src="img/burger3.jpg" alt="" class="burger-image">
+            </div>
+            <div class="description">
+                <h3>$15</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <input type="submit" value="SELECT" class="burger-button">
+        </div>
+        <div class="product">
+            <div class="burger-type">
+                <h2>Beef Burger</h2>
+            </div>
+            <div>
+                <img src="img/burger1.jpg" alt="" class="burger-image">
+            </div>
+            <div class="description">
+                <h3>$8</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <input type="submit" value="SELECT" class="burger-button">
+        </div>
+        <div class="product">
+            <div class="burger-type">
+                <h2>Cheese Burger</h2>
+            </div>
+            <div>
+                <img src="img/burger2.jpg" alt="" class="burger-image">
+            </div>
+            <div class="description">
+                <h3>$12</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <input type="submit" value="SELECT" class="burger-button">
+        </div>
+    </section>
+    <footer>
+        <p>© Copyright 2023, Burger ヽ(゜∇゜)ノ</p>
+    </footer>
+</body>
+</html>
